@@ -1,0 +1,83 @@
+﻿@model AuthPrestamos.Models.Abono
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Bienvenido al Sistema de Prestamos</h1>
+
+    <hr />
+
+    <div class="form-group">
+
+        <h3>Préstamo por: $ 
+            @if (ViewBag.CantidadPrestamo != null) { 
+            <label>@ViewBag.DetallePrestamo</label>
+            } else { 
+                <label>00.00</label>
+            }
+        </h3>
+        <h3>
+            Saldo por Pagar: $
+            @if (Model != null && Model.Saldo != null)
+            {
+                <label>@Model.Saldo</label>
+            }
+            else
+            {
+                <label>00.00</label>
+            }
+        </h3>
+
+    </div>
+</div>
+<hr />
+
+<form method="post" asp-action="Abonar">
+    <div class="form-group ">
+
+        <h4>Realizar Abono</h4>
+        <div class="form-row">
+
+            <label class="col-form-label">Cantidad: </label>
+            <input class="form-control col-4" placeholder="$0.00" />
+
+            <button class="btn btn-primary">Realizar Abono</button>
+        </div>
+
+    </div>
+</form>
+
+
+<div class="text-center">
+    <h3>Historial Pagos</h3>
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Abono</td>
+                <td>Fecha</td>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
